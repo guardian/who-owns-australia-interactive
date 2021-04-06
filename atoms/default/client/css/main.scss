@@ -1,0 +1,502 @@
+@import "fonts";
+@import "mq";
+@import "palette";
+@import "share";
+@import "tippy";
+@import "footer";
+
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+figure.element {
+    margin-top: 0px;
+}
+
+.element-atom,
+.interactive-atom {
+    width: 100%;
+    margin: 0 !important;
+    padding-bottom: 6px !important;
+}
+
+.interactive-wrapper {
+    width: 100%;
+	background-color: $background;
+	color: $text;
+	font-family: "Guardian Text Egyptian Web",Georgia,serif;
+	line-height: 1.5;
+
+	h1, h2, h3, h4 {
+		color: $primary;
+        line-height: 1.1em;
+        width: 100%;
+        display: block;
+        margin-bottom: 10px;
+	}
+
+	.content__main {
+		box-sizing: border-box;
+		position: relative;
+		margin-left: 0px;
+		border-top: 1px solid $text;
+		border-bottom: 1px solid $text;
+	}
+	.content__main:before {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		content: ' ';
+		
+	    @include mq($from: leftCol) {
+	    	border-left: 1px solid $text;
+	    }
+
+	}
+	@media (min-width:71.25em) {
+		.content__main:before {
+			left: calc((100% - 1140px)/ 2 + 120px);
+		}
+	}
+	@media (min-width:81.25em) {
+		.content__main:before {
+			left: calc((100% - 1300px)/ 2 + 200px);
+		}
+	}
+
+	.gs-container {
+		box-sizing: border-box;
+		padding-top: 20px;
+
+	    @include mq($until: tablet) {
+	    	padding: 20px;
+	    }
+
+	}
+
+    .content__main-column {
+        max-width: 620px;
+        box-sizing: border-box;
+        
+        position: relative;
+
+        @include mq($from: desktop, $until: wide) {
+            padding: 20px;
+        }
+
+        @include mq($from: wide) {
+            margin-left: 14.375rem;
+        }
+
+    }
+
+	.int-byline {
+		font-size: 16px;
+		line-height: 20px;
+		font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-weight: 400;
+		color: $text;
+		max-width: 620px;
+		display: block;
+		width: 100%;
+		clear: both;
+		margin-bottom: 20px;
+		margin-top: 20px;
+		border-top: 1px dotted gray;
+		padding-top: 5px;
+
+		a, .u-fauxlink {
+		    color: $primary;
+		    cursor: pointer;
+		    text-decoration: none;
+		}
+
+
+	}
+
+    .component-button {
+        background-color: $primary;
+        color: white;
+        margin-right: 40px;
+        margin-top: 5px;
+        cursor: pointer;
+        display: inline-block;
+        height: 30px;
+        line-height: 30px;
+        padding-left: 15px;
+        padding-right: 10px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+
+        .icon {
+        	margin-top: 5px;
+        	float: right;
+        	margin-left: 5px;
+        }
+    }
+
+    .gu-image {
+    	width: 100%;
+    	height: auto;
+    }
+
+    .inline_graphic {
+        width: 100%;
+        display: inline-block;
+        background-color: black;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    .inline_graphic_title {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        
+        h3 {
+            color: white;
+        }
+    }
+
+	.element-image figcaption {
+	    font-size: .75em;
+	    line-height: 1em;
+	    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+	    color: $text;
+	    padding-top: .5em;
+	    line-height: 1.5;
+	}
+
+	.full-width-container {
+		width: 100%;
+		min-height: 100vh;
+		display: block;
+		background-color: $primary;
+
+		.graphic_title_block {
+			width: 100%;
+			color: white;
+			box-sizing: border-box;
+			border-bottom: 1px solid white;
+
+			h2 {
+				color: white;
+				padding: 20px;
+
+			}
+		}
+
+		.graphic_container {
+			display: inline-block;
+			width: 100%;
+		}
+	}
+
+
+    .special-export-container {
+        width: 100%;
+        display: inline-block;
+        background-color: $primary;
+
+        .graphic_title_block {
+            width: 100%;
+            color: white;
+            box-sizing: border-box;
+            border-bottom: 1px solid white;
+
+            h2 {
+                color: white;
+                padding: 20px;
+
+            }
+        }
+
+        .graphic_container {
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+
+}
+
+
+.new-header {
+    z-index: 100;
+}
+
+.header_container {
+    width: 100%;
+    position: relative;
+    background-repeat: no-repeat;
+    height: 0px;
+    padding-bottom: 50%;
+    background-size: 100% auto;
+    z-index: 99;
+    background-color: lightgrey;
+
+    @include mq($until: mobileLandscape) {
+
+    }
+
+    @include mq($from: mobileLandscape, $until: tablet) {
+
+    }
+
+    @include mq($from: tablet, $until: desktop) {
+
+    }
+
+    @include mq($from: desktop) {
+
+    }
+
+    .title_container {
+		position: absolute;
+		top: 0px;
+		width: 100%;
+		height: 0px;
+		padding-bottom: 50%;
+		z-index: 100;
+    }
+
+    .gs-container {
+        width: 100%;
+        position: relative;
+        height: 0px;
+        padding-bottom: 50%;
+
+
+    }
+
+    #main-media {
+        width: 100%;
+        display: inline-block;
+    }
+
+    .header-wrapper {
+        position: absolute;
+        bottom: 0px;
+        
+        @include mq($until: tablet) {
+            width: calc(100% - 40px);
+        }
+
+        @include mq($from: tablet) {
+            width: 100%;
+        }
+
+        h1 {
+
+            font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
+            font-weight: 900;
+            color: #fff;
+            display: inline;
+            padding-bottom: .1em;
+            background: linear-gradient($primary, $primary) no-repeat;
+            box-shadow: 6px 0 0 $primary, -12px 0 0 $primary;
+            line-height: 1.34;
+
+            @include mq($until: mobileLandscape) {
+                font-size: 26px;
+            }
+
+            @include mq($from: mobileLandscape, $until: tablet) {
+                font-size: 30px;
+            }
+
+            @include mq($from: tablet, $until: desktop) {
+                font-size: 34px;
+            }
+
+            @include mq($from: desktop) {
+                font-size: 40px;
+                box-shadow: 6px 0 0 $primary, -10px 0 0 $primary;
+            }
+
+        }
+
+
+        .int-tag {
+            font-size: 18px;
+            line-height: 24px;
+            font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
+            font-weight: 900;
+            color: white;
+            background-color: #c70000;
+            display: inline-block;
+            padding: 2px 5px 5px;
+            transform: translateY(2px);
+            margin-left: -10px;
+
+            a {
+
+            }
+        }
+
+        /*
+        .int-tag::before {
+          content: url("<%= path %>/badge.svg");
+          float: left;
+          width: 26px;
+          height: 26px;
+          margin-right: 5px;
+        }
+        */
+
+
+    }
+
+    .mainCol {
+        max-width: 600px;
+        display: block;
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        @include mq($from: leftCol, $until: wide) {
+            margin-left: 9.375rem;
+        }
+
+        @include mq($from: wide) {
+            margin-left: 14.375rem;
+        }
+
+    }
+
+    .standfirst {
+        font-size: 1px;
+        line-height: 20px;
+        font-family: "Guardian Headline", "Guardian Egyptian Web", "Guardian Headline Full", Georgia, serif;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 27px;
+        display: block;
+        margin-top: 0px;
+        color: #000;
+        font-weight: 300;
+        font-style: italic;
+        max-width: 480px!important;
+        opacity: 0.7;
+    }
+
+    .standfirst span {
+        display: inline;
+        display: inline;
+        padding-bottom: .1em;
+        background: linear-gradient(#fff, #fff) no-repeat;
+        box-shadow: 5px 0 0 #fff, -10px 0 0 #fff;
+    }
+
+}
+
+.svg .caption:before, .svg figcaption:before {
+    background-image: none;
+}
+
+
+figcaption {
+    display: block;
+}
+svg:not(:root) {
+    overflow: hidden;
+}
+::-moz-selection {
+    background: #ffe500;
+    color: #121212;
+}
+::selection {
+    background: #ffe500;
+    color: #121212;
+}
+
+.inline-icon {
+    fill: #ffffff;
+}
+.inline-icon svg {
+    overflow: visible;
+}
+.content--pillar-news:not(.paid-content) .inline-triangle {
+    fill: #c70000;
+}
+
+#header_caption {
+    min-height: 40px;
+    display: block;
+    position: relative;
+
+    .caption--immersive {
+
+        
+        @include mq($until: mobile) {
+            position: relative;
+        }    
+        
+        @include mq($from: mobile, $until: mobileLandscape) {
+            position: relative;
+        }
+        
+        @include mq($from: mobileLandscape, $until: tablet) {
+            position: relative;
+        }
+        
+        @include mq($from: tablet, $until: desktop) {
+            position: relative;
+        }
+        
+        @include mq($from: desktop, $until: leftCol) {
+            position: relative;
+        }
+
+        @include mq($from: leftCol, $until: wide) {
+            margin-left: 9rem;
+            width: 9rem;
+            top: 0px;
+            position: absolute;
+        }
+
+        @include mq($from: wide) {
+            position: absolute;
+            margin-left: 13.35rem;
+            width: 13.75rem;
+            top: 0px;
+        }
+    }
+
+    .caption {
+        font-size: 0.75rem;
+        line-height: 1rem;
+        font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        color: #767676;
+    }
+
+    @media screen {
+        .caption:before, figcaption:before {
+            display: inline-block;
+            background-repeat: no-repeat;
+        }
+    }
+
+}
+
+.android,
+.ios {
+
+    .interactive-wrapper {
+
+        .content__main:before {
+            
+            @include mq($from: leftCol) {
+                border-left: none;
+            }
+
+        }
+
+    }
+
+}
+
+

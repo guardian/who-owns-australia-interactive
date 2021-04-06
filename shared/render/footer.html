@@ -1,0 +1,27 @@
+<div class="footer" id="footer">
+    
+    <div class="credits_read_more">
+        
+        <div class="notes"></div>
+
+    </div>
+
+    <div class="credits_read_more"><h2>Read more</h2></div>
+
+    <ul class="footer-grid">
+
+    	{{#footer}}
+
+        <li>
+            <div class="footer-item-container">
+                <img src="{{{image}}}">
+                <div class="footer_headline_container"><h2>{{headline}}</h2></div>
+                <a class="anchor" href="{{{url}}}" target="_blank"></a>
+            </div>
+        </li>
+
+        {{/footer}}
+    
+    </ul>
+
+</div>
