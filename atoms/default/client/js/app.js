@@ -2,7 +2,6 @@
 // just do e.g. import Scatter from "shared/js/scatter.js"
 import ownership from "shared/js/ownership"
 import map_2 from "shared/js/map_2"
-import map_3 from "shared/js/map_3"
 import { Loader, LoaderOptions } from 'google-maps';
 // https://preview.gutools.co.uk/global/ng-interactive/2021/mar/23/plundering-the-pacific
 

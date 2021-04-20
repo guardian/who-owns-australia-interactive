@@ -141,7 +141,7 @@ function content(section) {
        return mustache.render(social, section)
       break;
        case 'iframe':
-       return ''//mustache.render(table, section)
+       return mustache.render(table, section)
       break;
        case 'bylines':
        for (var i = 0; i < section.value.length; i++) {
