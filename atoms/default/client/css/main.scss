@@ -3,8 +3,15 @@
 @import "palette";
 @import "share";
 @import "tippy";
+@import "land";
 @import "footer";
 
+
+@import "leaflet";
+@import "leaflet-gesture-handling";
+@import "map";
+@import "table";
+@import "who";
 
 html, body {
     max-width: 100%;
@@ -498,5 +505,3 @@ svg:not(:root) {
     }
 
 }
-
-

@@ -1,0 +1,349 @@
+@import "mq";
+
+
+.hide {
+	display: none;
+}
+
+	.land {
+
+		display: inline-block;
+		position: relative;
+
+		#land-map {
+			position: absolute;
+			top: 0px;
+			left:0px;
+		}
+
+		.landLabel {
+			font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+			font-size: 11px;
+		}
+
+		#landKey {
+			box-sizing: border-box;
+			padding: 15px;
+			background-color: lightgrey;
+
+			@include mq($until: leftCol) {
+				width: 100%;
+			}
+
+			@include mq($from: leftCol) {
+				width: 50%;
+				float: left;
+			}
+			
+
+			ul, li {
+				margin: 0px;
+				font-size: 14px; 
+				line-height: 14px;
+				color: black;
+			    display:inline;
+			    font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+			}
+
+			li {
+				margin-right: 10px;
+			}
+
+		}
+
+		#landContainer {
+			width: 100%;
+		}
+
+		#land-filter {
+			width: 100%;
+			height: 50px;
+		}
+
+		#land-switch {
+			height: 50px;
+			padding: 0px;
+			margin: 0px;
+			background-color: #333;
+			
+			box-sizing: border-box;
+
+			@include mq($until: leftCol) {
+				width: 100%;
+				border-top: 1px solid white;
+			}
+
+			@include mq($from: leftCol) {
+				width: 25%;
+				float: left;
+				border-left: 1px solid white;
+			}
+
+			/*! CSS Used from: Embedded */
+
+			input {
+				color: inherit;
+				font: inherit;
+				margin: 0;
+				-webkit-font-smoothing: antialiased;
+			}
+			input::-moz-focus-inner {
+				border: 0;
+				padding: 0;
+			}
+			input {
+				line-height: normal;
+			}
+			input[type='checkbox'] {
+				box-sizing: border-box;
+				padding: 0;
+			}
+			::-moz-selection {
+				background: #ffe500;
+				color: #121212;
+			}
+			::selection {
+				background: #ffe500;
+				color: #121212;
+			}
+			/*! CSS Used from: https://assets.guim.co.uk/stylesheets/8dae54962a54457d5ce80d7d3a856e62/content.garnett.css ; media=screen */
+
+			@media screen {
+				[type=checkbox] {
+					float: left;
+					height: 0.8125rem;
+					margin-left: -1.25rem;
+					margin-top: 0.125rem;
+					width: 0.8125rem;
+				}
+			}
+			/*! CSS Used from: https://assets.guim.co.uk/stylesheets/34c092721cd48ba90dfa205824941d3c/print.css ; media=print */
+
+			@media print {
+				* {
+					max-width: 100%!important;
+					margin: 0!important;
+					padding: 0!important;
+					border: 0!important;
+					min-height: 0!important;
+					background-color: #ffffff!important;
+					color: #000000!important;
+				}
+			}
+			/*! CSS Used from: Embedded */
+
+			.interactive-view-switch {
+				width: 100%;
+				height: 50px;
+				float: right;
+				text-align: center;
+				font-size: 13px;
+				font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif;
+				color: white;
+				box-sizing: border-box;
+			}
+
+			.interactive-view-switch .view-label {
+				width: calc(100% / 2 - 60px);
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+				margin-top: 2px;
+			}
+			.interactive-view-switch .switch {
+				margin-top: 8px;
+			}
+			.left {
+				float: left;
+				text-align: left;
+			}
+			.right {
+				float: right;
+				text-align: right;
+			}
+			.view-switch-box input {
+				color: inherit;
+				font: inherit;
+				margin: 0;
+				-webkit-font-smoothing: antialiased;
+				line-height: normal;
+			}
+			.view-switch-box input::-moz-focus-inner {
+				border: 0;
+				padding: 0;
+			}
+			.view-switch-box input[type='checkbox'] {
+				box-sizing: border-box;
+				padding: 0;
+			}
+			.view-switch-box ::-moz-selection {
+				background: #d78f66;
+				color: #121212;
+			}
+			.view-switch-box ::selection {
+				background: #d78f66;
+				color: #121212;
+			}
+			@media screen {
+				.view-switch-box [type=checkbox] {
+					float: left;
+					height: 0.8125rem;
+					margin-left: -1.25rem;
+					margin-top: 0.125rem;
+					width: 0.8125rem;
+				}
+			}
+			.view-switch-box .switch {
+				position: relative;
+				width: 60px;
+				height: 34px;
+			}
+			@media (max-width: 29.99em) {
+				.view-switch-box .switch {
+					display: inline-block;
+				}
+			}
+			@media (min-width: 30em) and (max-width: 46.24em) {
+				.view-switch-box .switch {
+					display: inline-block;
+				}
+			}
+			@media (min-width: 46.25em) and (max-width: 61.24em) {
+				.view-switch-box .switch {
+					display: inline-block;
+				}
+			}
+			@media (min-width: 61.25em) {
+				.view-switch-box .switch {
+					display: inline-block;
+				}
+			}
+			.view-switch-box .switch input {
+				display: none;
+			}
+			.view-switch-box .slider {
+				position: absolute;
+				cursor: pointer;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: #d78f66;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+			.view-switch-box .slider:before {
+				position: absolute;
+				content: "";
+				height: 26px;
+				width: 26px;
+				left: 4px;
+				bottom: 4px;
+				background-color: $primary;
+				-webkit-transition: .4s;
+				transition: .4s;
+			}
+			.view-switch-box input:checked+.slider {
+				background-color: #d78f66;
+			}
+			.view-switch-box input:focus+.slider {
+				box-shadow: 0 0 1px #880c0c;
+			}
+			.view-switch-box input:checked+.slider:before {
+				-webkit-transform: translateX(26px);
+				-ms-transform: translateX(26px);
+				transform: translateX(26px);
+			}
+			.view-switch-box .slider.round {
+				border-radius: 34px;
+			}
+			.view-switch-box .slider.round:before {
+				border-radius: 50%;
+			}
+
+		}
+
+
+		.filters {
+			width: 100%;
+			line-height: 50px;
+			float: right;
+		}
+
+		@media (max-width: 46.24em) {
+			.filters {
+				width: 100%;
+			}
+		}
+
+		.filters .filter {
+			height: 50px;
+			background-color: #333;
+			z-index: 10;
+			font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif;
+			position: relative;
+			margin: 0px;
+			padding: 0 10px;
+			box-sizing: border-box;
+		}
+
+		@media (max-width: 46.24em) {
+			.filters .filter {
+				width: 100%;
+			}
+		}
+
+		.filters .filter .filter-label {
+			width: 100%;
+			padding-right: 30px;
+			color: #bdbdbd;
+		}
+
+		.filters .filter .filter-label .selection-name {
+			color: #fff;
+			font-weight: bold;
+		}
+
+		.filters .filter .filter-label:after {
+			display: block;
+			position: absolute;
+			right: 10px;
+			top: 0;
+			width: 24px;
+			height: 50px;
+			content: "";
+			background: url(https://interactive.guim.co.uk/atoms/2018/08/deaths_in_custody/v/1610575171463/assets/arrow-down.svg) no-repeat center;
+		}
+
+		.filters .filter select {
+			z-index: 90;
+			opacity: 0;
+			width: 100%;
+			height: 50px;
+			line-height: 50px;
+			-webkit-appearance: menulist-button;
+			position: absolute;
+			top: 0;
+			display: block;
+			left: 0;
+			color: #333;
+		}
+
+		.filters .filter select option {
+			font-size: 18px;
+		}
+
+		.tooltip {
+			background: #FFFFFF;
+			max-width:200px;
+			font-family: 'Guardian Text Sans Web',Arial;
+			padding:10px;
+			pointer-events: none;
+			border: 2px #000 solid;
+			color: black;
+			z-index: 1000;
+		}	
+
+	}
+
+

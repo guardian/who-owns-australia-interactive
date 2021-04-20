@@ -9,6 +9,7 @@ import graphic from "shared/render/graphic.html!text"
 import social from "shared/render/social.html!text"
 import bylines from "shared/render/bylines.html!text"
 import footer from "shared/render/footer.html!text"
+import table from "shared/render/table.html!text"
 
 var url = `https://interactive.guim.co.uk/docsdata/17Vg7IF43tLE5opFCDxxnZUMnp-0-Hr0i9jhGcdFK0S4.json?t=${new Date().getTime()}`
 
@@ -93,6 +94,20 @@ async function parser(json) {
 
       }
 
+      if (target==='iframe') {
+
+        console.log(value)
+
+        //html +=
+
+      }
+
+      if (target==='notes') {
+
+        console.log(value)
+
+      }
+
 
     }
 
@@ -125,6 +140,9 @@ function content(section) {
        case 'social':
        return mustache.render(social, section)
       break;
+       case 'iframe':
+       return ''//mustache.render(table, section)
+      break;
        case 'bylines':
        for (var i = 0; i < section.value.length; i++) {
          section.value[i].suffix = (i === section.value.length - 1) ? "" : (i === section.value.length - 2) ? " and " : ", "
@@ -133,7 +151,7 @@ function content(section) {
       break;
       default:
       console.log("No state specified. Roll over and go back to sleep")
-        return false;
+        return '';
       break;
     }
 

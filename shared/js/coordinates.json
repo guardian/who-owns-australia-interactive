@@ -1,0 +1,14 @@
+[{
+	"area" : "Australia",
+	"lat" : -25.414859,
+	"lng" : 133.635701,
+	"zoom" : 5,
+    "southWest": {
+        "lat": -42,
+        "lng": 142
+    },
+    "northEast": {
+        "lat": -112,
+        "lng": 25
+    }
+}]
