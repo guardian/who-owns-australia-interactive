@@ -1,16 +1,21 @@
 import { numberWithCommas, $, $$, getDimensions } from 'shared/js/util.js'
-import { Cartographer } from 'shared/js/cartographer.js'
+import { Country } from 'shared/js/country.js'
 import legend from "shared/templates/woa.html"
+import template from "shared/templates/land.html"
 
-export default function map_3(settings, target) {
+export default function map_2(settings, target) {
 
   const height = window.innerHeight;
 
   const ds = document.querySelector(`#${target}`);
 
-  const map_height = height - getDimensions( document.querySelector(`#${target}_title`) )[1]
+  ds.innerHTML = template
 
-  ds.style.height = `${map_height}px`;
+  const map_height = height - getDimensions( document.querySelector(`#${target}_title`) )[1] - getDimensions( document.querySelector(`#land-filter`) )[1]
+
+  const map = document.querySelector(`#landContainer`);
+
+  map.style.height = `${map_height}px`;
 
   const vectorTileStyling = {
 
@@ -34,6 +39,6 @@ export default function map_3(settings, target) {
 
   const tilesURL = `https://interactive.guim.co.uk/embed/aus/tileserver/woa/ownership/{z}/{x}/{y}.pbf`
 
-  const country = new Cartographer(target, tilesURL, vectorTileStyling, map_height, settings, tooltip, legend, 'Local or overseas ownership')
+  const country = new Country("landContainer", tilesURL, vectorTileStyling, map_height, settings, tooltip, legend)
 
 }

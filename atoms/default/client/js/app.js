@@ -2,7 +2,12 @@
 // just do e.g. import Scatter from "shared/js/scatter.js"
 import ownership from "shared/js/ownership"
 import map_2 from "shared/js/map_2"
+import map_3 from "shared/js/map_3"
 import { Loader, LoaderOptions } from 'google-maps';
+import animation from "shared/js/animation"
+import template from "shared/templates/animation.html"
+
+
 // https://preview.gutools.co.uk/global/ng-interactive/2021/mar/23/plundering-the-pacific
 
 import config from 'shared/settings/settings'
@@ -35,6 +40,37 @@ async function alphabet() {
 
 async function load () {
 
+  document.querySelector("#animation").innerHTML = template
+
+  var conf = {
+
+    rootMargin: '0px 0px 0px 0px',
+
+    threshold: 0
+
+  }
+
+  let boom = new IntersectionObserver(function(entries, exit) {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+
+        animation()
+
+        exit.unobserve(entry.target);
+
+      }
+
+    });
+
+  }, conf);
+
+  const component = document.querySelector('#animation');
+
+  boom.observe(component);
+
+
   if (!settings.app.isApp) {
 
     const share = new shareable(settings.social, settings.app).precheck()
@@ -51,7 +87,7 @@ async function load () {
 
     map_2(settings, 'state_ownership')
 
-    //map_3(settings, 'ownership_trends')
+    map_3(settings, 'biggest_owners')
 
 
   })

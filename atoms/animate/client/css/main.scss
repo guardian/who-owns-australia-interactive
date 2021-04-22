@@ -1,0 +1,13 @@
+@import "fonts";
+@import "mq";
+
+
+.interactive-wrapper {
+    width: 100%;
+}
+
+#master, #copy, #overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
