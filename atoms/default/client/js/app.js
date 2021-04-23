@@ -4,11 +4,8 @@ import ownership from "shared/js/ownership"
 import map_2 from "shared/js/map_2"
 import map_3 from "shared/js/map_3"
 import { Loader, LoaderOptions } from 'google-maps';
-import animation from "shared/js/animation"
-import template from "shared/templates/animation.html"
 
-
-// https://preview.gutools.co.uk/global/ng-interactive/2021/mar/23/plundering-the-pacific
+// https://preview.gutools.co.uk/global/ng-interactive/2021/apr/20/who-owns-australia
 
 import config from 'shared/settings/settings'
 import preflight from 'shared/js/preflight'
@@ -39,37 +36,6 @@ async function alphabet() {
 }
 
 async function load () {
-
-  document.querySelector("#animation").innerHTML = template
-
-  var conf = {
-
-    rootMargin: '0px 0px 0px 0px',
-
-    threshold: 0
-
-  }
-
-  let boom = new IntersectionObserver(function(entries, exit) {
-
-    entries.forEach(entry => {
-
-      if (entry.isIntersecting) {
-
-        animation()
-
-        exit.unobserve(entry.target);
-
-      }
-
-    });
-
-  }, conf);
-
-  const component = document.querySelector('#animation');
-
-  boom.observe(component);
-
 
   if (!settings.app.isApp) {
 

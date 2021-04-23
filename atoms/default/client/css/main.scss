@@ -185,40 +185,81 @@ figure.element {
 
 		.graphic_title_block {
 			width: 100%;
+            padding: 20px;
 			color: white;
 			box-sizing: border-box;
 			border-bottom: 1px solid white;
 
-			h2 {
-				color: white;
-				padding: 20px;
+            .graphic_headline_block {
+                color: white;
+                font-family: "Guardian Titlepiece";
+                font-size: 24px;
+                line-height: 28px;
 
-			}
+            }
+
+            .graphic_standfirst_block {
+
+            }
 		}
 
 		.graphic_container {
 			display: inline-block;
 			width: 100%;
 		}
+
+
+
+        .graphic_notes_block {
+            width: 100%;
+            padding: 10px;
+            padding-bottom: 0px;
+            padding-top: 10px;
+            box-sizing: border-box;
+            font-size: 14px;
+            background-color: white;
+
+        }
+
+        .graphic_source_block {
+            background-color: white;
+            width: 100%;
+            padding: 10px;
+            padding-top: 0px;
+            box-sizing: border-box;
+            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-size: 11px;
+            color: darkgrey;
+
+            span {
+                font-weight: bold;
+            }
+        }
+
 	}
 
-
+    /*
     .special-export-container {
         width: 100%;
         display: inline-block;
         background-color: $primary;
 
         .graphic_title_block {
+            box-sizing: border-box;
+            padding: 20px;
             width: 100%;
             color: white;
-            box-sizing: border-box;
             border-bottom: 1px solid white;
 
-            h2 {
+            .graphic_headline_block {
                 color: white;
-                padding: 20px;
-
             }
+
+            .graphic_standfirst_block {
+                width: 100%;
+                padding: 20px;
+            }
+
         }
 
         .graphic_container {
@@ -226,6 +267,7 @@ figure.element {
             width: 100%;
         }
     }
+    */
 
 
 }

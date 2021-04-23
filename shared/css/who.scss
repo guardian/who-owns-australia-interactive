@@ -1,73 +1,75 @@
 
-.who {
+.who, .for {
 	background-color: black;
+
+	.headline-container h3 {
+		font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+		font-size: 21px;
+		margin: 6px;
+	}
+	.bigNumbers {
+		display: -webkit-flex;
+		display: flex;
+		width: 100%;
+		border-top: 2px solid #c70000;
+	}
+	.labelBottom {
+		fill: #767676;
+	}
+	.three .numWrapper {
+		width: 33%;
+	}
+	.numWrapper {
+		padding: 6px 0 6px 6px;
+		border-bottom: 1px solid #dcdcdc;
+		border-right: 1px solid #dcdcdc;
+	}
+	.numWrapper span {
+		font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
+		font-variant-numeric: lining-nums;
+		font-size: 48px;
+		line-height: 40px;
+	}
+	.numWrapper p {
+		font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		margin: 0;
+		font-weight: 700;
+
+	    @include mq($until: tablet) {
+	    	font-size: 12px;
+	    }
+
+	    @include mq($from: tablet) {
+	    	font-size: 14px;
+	    }
+
+	}
+
+	.dosesLabel {
+		font-size: 20px;
+		font-weight: 700;
+		fill: #005689;
+	}
+	.chartSans {
+		font-size: 12px;
+		color: #767676;
+		font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif;
+	}
+	.notes {
+		font-family: 'Guardian Text Sans Web', Arial;
+		font-size: 12px;
+		color: #767676;
+		padding: 2px;
+	}
+	a {
+		color: #ab0613;
+		text-decoration: none!important;
+		border-bottom: .0625rem solid #dcdcdc;
+		transition: border-color .15s ease-out;
+	}
+	a:hover {
+		border-color: #ab0613;
+	}
+
 }
 
-.who .headline-container h3 {
-	font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
-	font-size: 21px;
-	margin: 6px;
-}
-.who .bigNumbers {
-	display: -webkit-flex;
-	display: flex;
-	width: 100%;
-	border-top: 2px solid #c70000;
-}
-.who .labelBottom {
-	fill: #767676;
-}
-.who .three .numWrapper {
-	width: 33%;
-}
-.who .numWrapper {
-	padding: 6px 0 6px 6px;
-	border-bottom: 1px solid #dcdcdc;
-	border-right: 1px solid #dcdcdc;
-}
-.who .numWrapper span {
-	font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
-	font-variant-numeric: lining-nums;
-	font-size: 48px;
-	line-height: 40px;
-}
-.who .numWrapper p {
-	font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-	margin: 0;
-	font-weight: 700;
-
-    @include mq($until: tablet) {
-    	font-size: 12px;
-    }
-
-    @include mq($from: tablet) {
-    	font-size: 14px;
-    }
-
-}
-
-.who .dosesLabel {
-	font-size: 20px;
-	font-weight: 700;
-	fill: #005689;
-}
-.who .chartSans {
-	font-size: 12px;
-	color: #767676;
-	font-family: 'Guardian Text Sans Web', 'Agate Sans', sans-serif;
-}
-.who .notes {
-	font-family: 'Guardian Text Sans Web', Arial;
-	font-size: 12px;
-	color: #767676;
-	padding: 2px;
-}
-.who a {
-	color: #ab0613;
-	text-decoration: none!important;
-	border-bottom: .0625rem solid #dcdcdc;
-	transition: border-color .15s ease-out;
-}
-.who a:hover {
-	border-color: #ab0613;
-}
