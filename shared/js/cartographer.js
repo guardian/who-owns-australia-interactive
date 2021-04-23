@@ -59,6 +59,29 @@ export class Cartographer {
           [-8.4289, 155.0171]
         ])
 
+        var isAndroidApp = (window.location.origin === "file://" || window.location.origin === null || window.location.origin === "https://mobile.guardianapis.com" && /(android)/i.test(navigator.userAgent) ) ? true : false ;
+
+        var el = document.querySelector(`#${self.carto}`)
+
+        el.ontouchstart = function(e){
+
+            if (isAndroidApp && window.top.GuardianJSInterface.registerRelatedCardsTouch) {
+
+              window.top.GuardianJSInterface.registerRelatedCardsTouch(true);
+
+            }
+        };
+
+        el.ontouchend = function(e){
+
+            if (isAndroidApp && window.top.GuardianJSInterface.registerRelatedCardsTouch) {
+
+              window.top.GuardianJSInterface.registerRelatedCardsTouch(false);
+
+            }
+
+        };
+
         this.info = L.control();
 
         this.info.onAdd = function (map) {

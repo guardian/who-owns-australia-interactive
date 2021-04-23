@@ -62,6 +62,29 @@ export class Carto {
         })
 
 
+        var isAndroidApp = (window.location.origin === "file://" || window.location.origin === null || window.location.origin === "https://mobile.guardianapis.com" && /(android)/i.test(navigator.userAgent) ) ? true : false ;
+
+        var el = document.querySelector(`#${self.carto}`)
+
+        el.ontouchstart = function(e){
+
+            if (isAndroidApp && window.top.GuardianJSInterface.registerRelatedCardsTouch) {
+
+              window.top.GuardianJSInterface.registerRelatedCardsTouch(true);
+
+            }
+        };
+
+        el.ontouchend = function(e){
+
+            if (isAndroidApp && window.top.GuardianJSInterface.registerRelatedCardsTouch) {
+
+              window.top.GuardianJSInterface.registerRelatedCardsTouch(false);
+
+            }
+
+        };
+
         var zoom = (this.settings.screenWidth < 500) ? 2 : (this.settings.screenWidth < 700) ? 1 : 0 ;
 
         //this.map.setView(new L.LatLng(coordinates[0].lat, coordinates[0].lng), coordinates[0].zoom - zoom);
