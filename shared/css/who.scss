@@ -29,6 +29,12 @@
 		font-variant-numeric: lining-nums;
 		font-size: 48px;
 		line-height: 40px;
+
+		@include mq($until: tablet) {
+			font-size: 40px;
+			line-height: 36px;
+		}
+
 	}
 	.numWrapper p {
 		font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;

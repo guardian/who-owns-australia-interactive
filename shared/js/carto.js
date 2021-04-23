@@ -64,7 +64,18 @@ export class Carto {
 
         var zoom = (this.settings.screenWidth < 500) ? 2 : (this.settings.screenWidth < 700) ? 1 : 0 ;
 
-        this.map.setView(new L.LatLng(coordinates[0].lat, coordinates[0].lng), coordinates[0].zoom - zoom);
+        //this.map.setView(new L.LatLng(coordinates[0].lat, coordinates[0].lng), coordinates[0].zoom - zoom);
+
+        /*this.map.fitBounds([
+          [-32.811571, 113.391738],
+          [-11.820931, 153.192672]
+        ])*/
+
+        this.map.fitBounds([
+          [-44.5748, 111.7309],
+          [-8.4289, 155.0171]
+        ])
+
 
         var styled = L.gridLayer.googleMutant({
 

@@ -10,6 +10,7 @@ import social from "shared/render/social.html!text"
 import bylines from "shared/render/bylines.html!text"
 import footer from "shared/render/footer.html!text"
 import table from "shared/render/table.html!text"
+import indigenous from "shared/render/indigenous.html!text"
 
 var url = `https://interactive.guim.co.uk/docsdata/17Vg7IF43tLE5opFCDxxnZUMnp-0-Hr0i9jhGcdFK0S4.json?t=${new Date().getTime()}`
 
@@ -142,6 +143,9 @@ function content(section) {
       break;
        case 'iframe':
        return mustache.render(table, section)
+      break 
+      case 'indigenous':
+      return mustache.render(indigenous, section)
       break;
        case 'bylines':
        for (var i = 0; i < section.value.length; i++) {

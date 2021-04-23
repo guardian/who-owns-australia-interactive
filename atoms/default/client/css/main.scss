@@ -4,6 +4,7 @@
 @import "share";
 @import "tippy";
 @import "land";
+@import "indigenous";
 @import "footer";
 
 
@@ -208,8 +209,6 @@ figure.element {
 			width: 100%;
 		}
 
-
-
         .graphic_notes_block {
             width: 100%;
             padding: 10px;
@@ -218,7 +217,10 @@ figure.element {
             box-sizing: border-box;
             font-size: 14px;
             background-color: white;
-
+            font-size: 14px;
+            line-height: 17px;
+            font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            color: #767676;
         }
 
         .graphic_source_block {
@@ -229,9 +231,10 @@ figure.element {
             box-sizing: border-box;
             font-family: "Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
             font-size: 11px;
-            color: darkgrey;
+            color: #767676;
 
             span {
+                color: black;
                 font-weight: bold;
             }
         }
