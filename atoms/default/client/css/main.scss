@@ -285,32 +285,44 @@ figure.element {
     position: relative;
     background-repeat: no-repeat;
     height: 0px;
-    padding-bottom: 50%;
-    background-size: 100% auto;
+    
+    
     z-index: 99;
 
     @include mq($until: mobile) {
-        background-image: url('<%= path %>/320/woa.jpg');
+        background-image: url('<%= path %>/320/woa2.jpg');
+        padding-bottom: 50vh;
+        background-size: cover;
     }
 
     @include mq($from: mobile, $until: mobileLandscape) {
-        background-image: url('<%= path %>/480/woa.jpg');
+        background-image: url('<%= path %>/480/woa2.jpg');
+        padding-bottom: 50vh;
+        background-size: cover;
     }
 
     @include mq($from: mobileLandscape, $until: tablet) {
-        background-image: url('<%= path %>/740/woa.jpg');
+        background-image: url('<%= path %>/740/woa2.jpg');
+        padding-bottom: 50%;
+        background-size: 100% auto;
     }
 
     @include mq($from: tablet, $until: desktop) {
-        background-image: url('<%= path %>/980/woa.jpg');
+        background-image: url('<%= path %>/980/woa2.jpg');
+        padding-bottom: 50%;
+        background-size: 100% auto;
     }
 
     @include mq($from: desktop, $until: wide) {
-        background-image: url('<%= path %>/2000/woa.jpg');
+        background-image: url('<%= path %>/1300/woa2.jpg');
+        padding-bottom: 50%;
+        background-size: 100% auto;
     }
 
     @include mq($from: wide) {
-        background-image: url('<%= path %>/2000/woa.jpg');
+        background-image: url('<%= path %>/2000/woa2.jpg');
+        padding-bottom: 50%;
+        background-size: 100% auto;
     }
 
     .title_container {
