@@ -156,6 +156,8 @@ export class Cartographer {
 
             var html = mustache(self.tooltip, e.layer.properties)
 
+            /*
+
             if (self.dropdown != 'Local or overseas ownership' ) {
 
                 if (e.layer.properties['Owner rank']<21) {
@@ -167,6 +169,8 @@ export class Cartographer {
                 // <br/><strong>Area: </strong>${commas(parseInt(e.layer.properties['Owner area']))
 
             }
+
+            */
 
             self.info.update(html);
 
