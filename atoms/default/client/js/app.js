@@ -5,7 +5,7 @@ import map_2 from "shared/js/map_2"
 import map_3 from "shared/js/map_3"
 import { Loader, LoaderOptions } from 'google-maps';
 
-// https://preview.gutools.co.uk/global/ng-interactive/2021/apr/20/who-owns-australia
+// https://preview.gutools.co.uk/australia-news/ng-interactive/2021/may/03/who-owns-australia-top-20-private-landholders-own-more-than-all-indigenous-communities
 
 import config from 'shared/settings/settings'
 import preflight from 'shared/js/preflight'

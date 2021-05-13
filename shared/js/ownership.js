@@ -37,7 +37,9 @@ export default function ownership(settings) {
 
   };
 
-  const tilesURL = "https://interactive.guim.co.uk/embed/aus/tileserver/ownership"
+  const tilesURL = `https://interactive.guim.co.uk/embed/aus/tileserver/woa/main`
+
+  //const tilesURL = "https://interactive.guim.co.uk/embed/aus/tileserver/ownership"
 
   const carto = new Carto("map", tilesURL, vectorTileStyling, map_height, settings)  // ID of the map div, location of the tileserver
 

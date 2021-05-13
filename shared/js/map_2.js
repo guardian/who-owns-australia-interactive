@@ -21,7 +21,7 @@ export default function map_2(settings, target) {
 
   const vectorTileStyling = {
 
-      "australia" : function(properties, zoom) {
+      "pastoral" : function(properties, zoom) {
 
           var colour = (properties.Category==="Australian") ? '#11b9a7' : (properties.Category==="Unknown") ? '#bb4f35' : '#efca18'
 
@@ -37,9 +37,9 @@ export default function map_2(settings, target) {
 
   };
 
-  const tooltip = `{{#Owner}}<strong>Name: </strong>{{Name}}<br/><strong>Owner: </strong>{{Owner}}{{/Owner}}{{^Owner}}Ownership unknown{{/Owner}}`
+  const tooltip = `{{#Owner}}<strong>Owner: </strong>{{Owner}}{{/Owner}}{{^Owner}}Ownership unknown{{/Owner}}` //<strong>Name: </strong>{{Name}}<br/>
 
-  const tilesURL = `https://interactive.guim.co.uk/embed/aus/tileserver/woa/ownership/{z}/{x}/{y}.pbf`
+  const tilesURL = `https://interactive.guim.co.uk/embed/aus/tileserver/woa/pastoral/{z}/{x}/{y}.pbf`
 
   const country = new Cartographer('foreign', tilesURL, vectorTileStyling, map_height, settings, tooltip, legend, 'Local or overseas ownership')
 
