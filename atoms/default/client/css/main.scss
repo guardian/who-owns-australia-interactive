@@ -613,6 +613,14 @@ svg:not(:root) {
 
 }
 
+.outback_container {
+    width: 100%;
+    border-top: 1px dotted black;
+    padding-top: 10px;
+    border-bottom: 1px dotted black;
+    margin-bottom: 20px;
+}
+
 .android,
 .ios {
 
