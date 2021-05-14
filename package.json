@@ -72,6 +72,7 @@
     "npm": "^7.10.0",
     "raw-loader": "^4.0.2",
     "terser-webpack-plugin": "^4.2.2",
+    "topojson": "^3.0.2",
     "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

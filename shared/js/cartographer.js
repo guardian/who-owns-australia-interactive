@@ -12,7 +12,8 @@ L.Map.addInitHook("addHandler", "gestureHandling", GestureHandling);
 //import tippy from 'tippy.js';
 import mapstyles from 'shared/js/mapstyles.json'
 import coordinates from 'shared/js/coordinates'
-
+import * as topojson from "topojson"
+import unknown from 'shared/js/unknown.json'
 /*---------------------- */
 
 export class Cartographer {
@@ -129,6 +130,25 @@ export class Cartographer {
         }).addTo(self.map);
 
         // https://leaflet.github.io/Leaflet.VectorGrid/vectorgrid-api-docs.html
+
+        if (self.dropdown === 'Local or overseas ownership' ) {
+
+            var mystery = topojson.feature(unknown, unknown.objects.unknown);
+
+            var tileLayer = L.vectorGrid.slicer(mystery, {
+                rendererFactory: L.canvas.tile,
+                vectorTileLayerStyles: {
+                    sliced: {
+                        fill: true,
+                        weight: 0,
+                        fillColor: '#bb4f35',
+                        color: '#bb4f35',
+                        fillOpacity: 1,
+                        opacity: 0
+                    }
+                }
+            }).addTo(self.map);
+        }
 
         function commas(x) {
             return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
