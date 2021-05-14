@@ -27,13 +27,43 @@
 	.numWrapper span {
 		font-family: "Guardian Titlepiece", "Guardian Headline Full", "Guardian Headline", "Guardian Egyptian Web", Georgia, serif;
 		font-variant-numeric: lining-nums;
-		font-size: 48px;
-		line-height: 40px;
 
-		@include mq($until: tablet) {
+
+		@include mq($until: mobile) {
+			font-size: 28px;
+			line-height: 30px;
+		}
+		
+		@include mq($from: mobile, $until: mobileLandscape) {
+			font-size: 28px;
+			line-height: 30px;
+		}
+		
+		@include mq($from: mobileLandscape, $until: tablet) {
 			font-size: 40px;
 			line-height: 36px;
 		}
+		
+		@include mq($from: tablet, $until: desktop) {
+			font-size: 40px;
+			line-height: 36px;
+		}
+		
+		@include mq($from: desktop, $until: leftCol) {
+			font-size: 48px;
+			line-height: 40px;
+		}
+		
+		@include mq($from: leftCol, $until: wide) {
+			font-size: 48px;
+			line-height: 40px;
+		}
+		
+		@include mq($from: wide) {
+			font-size: 48px;
+			line-height: 40px;
+		}
+		
 
 	}
 	.numWrapper p {
@@ -41,13 +71,34 @@
 		margin: 0;
 		font-weight: 700;
 
-	    @include mq($until: tablet) {
-	    	font-size: 12px;
-	    }
-
-	    @include mq($from: tablet) {
-	    	font-size: 14px;
-	    }
+		@include mq($until: mobile) {
+			font-size: 8px;
+		}
+		
+		@include mq($from: mobile, $until: mobileLandscape) {
+			font-size: 10px;
+		}
+		
+		@include mq($from: mobileLandscape, $until: tablet) {
+			font-size: 10px;
+		}
+		
+		@include mq($from: tablet, $until: desktop) {
+			font-size: 12px;
+		}
+		
+		@include mq($from: desktop, $until: leftCol) {
+			font-size: 14px;
+		}
+		
+		@include mq($from: leftCol, $until: wide) {
+			font-size: 14px;
+		}
+		
+		@include mq($from: wide) {
+			font-size: 14px;
+		}
+	
 
 	}
 

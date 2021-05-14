@@ -6,11 +6,19 @@ export default function ownership(settings) {
 
   const height = window.innerHeight;
 
+  const width = window.innerWidth;
+
   const ds = document.querySelector('#ownership_map_1');
 
   ds.innerHTML = template
 
-  const map_height = height - getDimensions( document.querySelector('#ownership_map_1_title') )[1] - getDimensions( document.querySelector('.who') )[1]
+  let map_height = height - getDimensions( document.querySelector('.who') )[1]
+
+  if (width > 740) {
+
+    map_height = map_height - getDimensions( document.querySelector('#ownership_map_1_title') )[1] 
+
+  }
 
   ds.style.height = `${map_height}px`;
 
