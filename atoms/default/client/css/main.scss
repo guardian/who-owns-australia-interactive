@@ -14,22 +14,6 @@
 @import "table";
 @import "who";
 
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-figure.element {
-    margin-top: 0px;
-}
-
-.element-atom,
-.interactive-atom {
-    width: 100%;
-    margin: 0 !important;
-    padding-bottom: 6px !important;
-}
-
 .interactive-wrapper {
     width: 100%;
 	background-color: $background;
@@ -37,7 +21,20 @@ figure.element {
 	font-family: "Guardian Text Egyptian Web",Georgia,serif;
 	line-height: 1.5;
 
+    strong {
+        font-weight: bold;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+        font-family: "Guardian Text Egyptian Web",Georgia,serif;
+        line-height: 150%;
+    }
+
+
 	h1, h2, h3, h4 {
+        font-family: "Guardian Titlepiece", "GH Guardian Headline",Georgia,serif;
 		color: $primary;
         line-height: 1.1em;
         width: 100%;
@@ -57,22 +54,25 @@ figure.element {
 		top: 0;
 		height: 100%;
 		content: ' ';
-		
-	    @include mq($from: leftCol) {
-	    	border-left: 1px solid $text;
-	    }
+
+        @include mq($from: wide) {
+            border-left: 1px solid black;
+        }
+
 
 	}
-	@media (min-width:71.25em) {
-		.content__main:before {
-			left: calc((100% - 1140px)/ 2 + 120px);
-		}
-	}
-	@media (min-width:81.25em) {
-		.content__main:before {
-			left: calc((100% - 1300px)/ 2 + 200px);
-		}
-	}
+
+    @include mq(leftCol) {
+        .content__main:before {
+            left: calc((100% - 1140px)/ 2 - 20px) ;
+        }
+    }
+    
+    @include mq(wide) {
+        .content__main:before {
+            left: calc((100% - 1300px)/ 2 - 20px);
+        }
+    }
 
 	.gs-container {
 		box-sizing: border-box;
@@ -94,9 +94,14 @@ figure.element {
             padding: 20px;
         }
 
-        @include mq($from: wide) {
-            margin-left: 14.375rem;
+        @include mq(leftCol) {
+            left: calc((100% - 1140px)/ 2);
         }
+        
+        @include mq(wide) {
+            left: calc((100% - 1300px)/ 2);
+        }
+
 
     }
 

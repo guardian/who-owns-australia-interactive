@@ -11,7 +11,7 @@ import config from 'shared/settings/settings'
 import preflight from 'shared/js/preflight'
 const settings = preflight(config)
 
-import shareable from "shared/js/shareable";
+//import shareable from "shared/js/shareable";
 
 const timer = ms => new Promise(res => setTimeout(res, ms)) 
 
@@ -37,6 +37,10 @@ async function alphabet() {
 
 async function load () {
 
+  document.querySelector(".header-share-container").style.display = "none";
+
+  /*
+
   if (!settings.app.isApp) {
 
     const share = new shareable(settings.social, settings.app).precheck()
@@ -46,6 +50,8 @@ async function load () {
     document.querySelector(".header-share-container").style.display = "none";
 
   }
+
+  */
 
   await alphabet().then(data => {
 

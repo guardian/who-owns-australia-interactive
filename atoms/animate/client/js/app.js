@@ -1,7 +1,7 @@
 //if you want to import a module from shared/js then you can
 // just do e.g. import Scatter from "shared/js/scatter.js"s
 
-/*
+
 import * as flubber from "flubber"
 import * as d3 from 'd3'
 
@@ -14,6 +14,13 @@ async function animate(colour, path, target) {
       var array = Array.from(document.querySelectorAll(`.${colour}`)).map(d => d.getAttribute("d"));
 
       var interpolators = flubber.combine(array, path);
+
+      d3.select(`#${colour}`)
+        .transition()
+        .duration(1000)
+        .ease(d3.easeLinear)
+        .style("opacity", 0)
+
 
       d3.selectAll(`.${colour}`)
           .data(interpolators)
@@ -51,15 +58,15 @@ async function wrapper() {
     .ease(d3.easeLinear)
     .style("opacity", 0)
 
-  const rose = await animate("pink", "M510.6,944.9c0,102.4-83.1,185.5-185.5,185.5s-185.5-83.1-185.5-185.5s83.1-185.5,185.5-185.5S510.6,842.5,510.6,944.9z", "#one")
+  const rose = await animate("pink", "M547,973.9c0,135.1-109.5,244.6-244.6,244.6S57.9,1109,57.9,973.9s109.5-244.6,244.6-244.6 S547,838.8,547,973.9z", "#one")
 
   console.log("Pink")
 
-  const bleue = await animate("blue", "M1862.7,940.7c0,136.1-110.4,246.5-246.5,246.5s-246.5-110.4-246.5-246.5s110.4-246.5,246.5-246.5S1862.7,804.6,1862.7,940.7z", "#two")
+  const bleue = await animate("blue", "M1947,973.9c0,75.7-61.3,137-137,137s-137-61.3-137-137s61.3-137,137-137S1947,898.2,1947,973.9z", "#two")
 
   console.log("Blue")
 
-  const verte = await animate("green", "M1266.6,941.6c0,180.9-146.6,327.5-327.5,327.5s-327.5-146.6-327.5-327.5s146.6-327.5,327.5-327.5S1266.6,760.8,1266.6,941.6z", "#three")
+  const verte = await animate("green", "M1611.1,973.9c0,277.3-224.8,502-502,502s-502-224.8-502-502s224.8-502,502-502S1611.1,696.7,1611.1,973.9z", "#three")
 
   console.log("Green")
 
@@ -67,9 +74,12 @@ async function wrapper() {
 
 }
 
+setTimeout(function(){
+  wrapper().then(message => console.log(message))
+}, 3000);
 
-wrapper().then(message => console.log(message))
 
-*/
+
+
 
 
