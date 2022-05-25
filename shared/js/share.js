@@ -1,71 +1,26 @@
 const twitterBaseUrl = 'https://twitter.com/intent/tweet?text=';
+const facebookBaseUrl = 'https://www.facebook.com/dialog/feed?display=popup&app_id=180444840287&redirect_uri=http://www.theguardian.com&link=';
 const googleBaseUrl = 'https://plus.google.com/share?url=';
 
-export default function share(title, shareURL, fbImg, twImg, hashTag, FBmessage='') {
-    var twImgText = twImg ? ` ${twImg.trim()} ` : ' ';
+export default function share(title, shareURL, fbImg, twImg, hashTag, description) {
+
+    var twImgText = twImg ? `  ` : '';
+    var fbImgQry = fbImg ? `&picture=` : '';
+    
     return function (network, extra='') {
-        var twitterMessage = `${title} ${hashTag}`;
+        var twitterMessage = ``;
         var shareWindow;
 
         if (network === 'twitter') {
             shareWindow = twitterBaseUrl + encodeURIComponent(twitterMessage + ' ') + shareURL;
+        } else if (network === 'facebook') {
+            shareWindow = facebookBaseUrl + shareURL + fbImgQry;
         } else if (network === 'email') {
             shareWindow = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + shareURL;
         } else if (network === 'google') {
             shareWindow = googleBaseUrl + shareURL;
         }
 
-        if (network != 'facebook') {
-            window.open(shareWindow, network + 'share', 'width=640,height=320');
-        } else {
-
-
-          FB.ui({
-            method: 'share',
-            href: window.location.href
-          },
-          function (response) {
-          // Action after response
-          });
-          
-          return false;
-          
-
-          /*
-          *
-          *
-          *
-          * // If you want to dynamically set the Facebook share options use the following
-          * // http://drib.tech/programming/dynamically-change-facebook-open-graph-meta-data-javascript
-          if (FB) {
-
-            console.log("Initiated Facebook dynamic share stuff")
-
-            FB.ui({
-              method: 'share_open_graph',
-              action_type: 'og.likes',
-              action_properties: JSON.stringify({
-                object: {
-                  'og:url': shareURL,
-                  'og:title': title,
-                  'og:description': FBmessage,
-                  'og:image': fbImg
-                }
-              })
-            },
-            function (response) {
-            // Action after response
-              console.log("Facebook share stuff worked")
-            });
-            *
-            *
-            *
-            *
-            *
-
-            }
-
-            */
+        window.open(shareWindow, network + 'share', 'width=640,height=320');
     }
-  }
-}
+} 
