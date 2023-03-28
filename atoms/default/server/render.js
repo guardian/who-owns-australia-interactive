@@ -33,7 +33,7 @@ async function parser(json) {
 
   return new Promise(function(resolve, reject) {
 
-    let html = `<div class="interactive-wrapper">`
+    let html = `<div class="interactive-container">`
 
     for (const [key, value] of Object.entries(json)) {
 
@@ -41,7 +41,9 @@ async function parser(json) {
 
       if (target==='text') {
 
-        html += `<div class="content__main"><div class="gs-container"><div class="content__main-column content__main-column--interactive">`
+        html += '<div class="editorial">'
+
+        //`<div class="content__main"><div class="gs-container"><div class="content__main-column content__main-column--interactive">`
 
         for (const k of value) {
 
@@ -49,7 +51,9 @@ async function parser(json) {
 
         }
 
-        html += `</div></div></div>`
+        html += `</div>`
+
+        //`</div></div></div>`
 
       }
 

@@ -14,8 +14,15 @@
 @import "table";
 @import "who";
 
-.interactive-wrapper {
+html, body {
     width: 100%;
+    max-width: 100%;
+    padding:0px;
+    margin: 0px;
+}
+
+.interactive-container {
+    width: 100vw !important;
 	background-color: $background;
 	color: $text;
 	font-family: "Guardian Text Egyptian Web",Georgia,serif;
@@ -80,6 +87,31 @@
         }
     }
 
+    .editorial {
+        max-width: 620px;
+        box-sizing: border-box;
+        padding: 20px;
+        
+        position: relative;
+
+        @include mq($from: desktop, $until: wide) {
+            padding: 20px;
+        }
+
+        @include mq(leftCol) {
+            left: calc((100% - 620x)/ 2);
+        }
+        
+        @include mq(wide) {
+            left: calc((100% - 620px)/ 2);
+        }
+
+
+    }
+
+
+    /*
+
 	.gs-container {
 		box-sizing: border-box;
 		padding-top: 20px;
@@ -110,6 +142,8 @@
 
 
     }
+
+    */
 
 	.int-byline {
 		font-size: 16px;
@@ -491,16 +525,7 @@
         max-width: 600px;
         display: block;
         padding: 0 10px;
-        margin-top: 10px;
-        margin-bottom: 20px;
-
-        @include mq($from: leftCol, $until: wide) {
-            margin-left: 9.375rem;
-        }
-
-        @include mq($from: wide) {
-            margin-left: 14.375rem;
-        }
+        margin: auto;
 
     }
 
@@ -632,19 +657,36 @@ svg:not(:root) {
     margin-bottom: 20px;
 }
 
-.android,
-.ios {
 
-    .interactive-wrapper {
-
-        .content__main:before {
-            
-            @include mq($from: leftCol) {
-                border-left: none;
-            }
-
-        }
-
-    }
-
+.interactive-atom {
+    margin: 0;
+    padding: 0;
 }
+
+
+/*----- App fixes -----*/
+.ios, .android {
+    .element--immersive {
+        @include mq($until: tablet) {
+            width: 100vw !important;
+            position: relative;
+            left: 50% !important;
+            right: 50% !important;
+            margin-left: -50vw !important;
+            margin-right: -50vw !important;
+        }
+        @include mq(tablet) {
+            transform: translateX(-20px);
+            width: calc(100% + 60px);
+        }
+    }
+    
+    //remove dark mode padding in apps
+    figure.element.element-atom, figure.interactive.interactive-atom.interactive--loading {
+        padding: 0 !important;
+    }
+}
+
+
+
+
